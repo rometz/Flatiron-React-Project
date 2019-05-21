@@ -5,7 +5,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :set
       t.integer :multiverseid
       t.string :imageUrl
-      t.string :id
+      t.string :deck_id
     end
   end
 end
