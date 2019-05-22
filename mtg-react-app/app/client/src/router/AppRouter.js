@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Cards from '../components/Cards';
-import Deck from '../components/Deck';
+import Cards from '../container/Cards';
+import Deck from '../container/Deck';
 import Drafter from '../container/Drafter';
-/* home, about, header, footer, drafter?? */
+/* home, about, header, footer, */
 
 function AppRouter() {
     return (
