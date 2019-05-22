@@ -1,4 +1,5 @@
 class Card < ActiveRecord::Base
+    belongs_to :deck
     validates :name, :set, :multiverseid, :imageUrl, presence: true
 
 

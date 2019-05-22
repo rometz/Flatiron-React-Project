@@ -17,6 +17,6 @@ class CardsController < ApplicationController
     private
 
     def card_params
-        params.require(:card).permit(:name, :set, :multiverseid, :imageUrl)
+        params.require(:card).permit(:name, :set, :multiverseid, :imageUrl, :deck_id)
     end
 end
