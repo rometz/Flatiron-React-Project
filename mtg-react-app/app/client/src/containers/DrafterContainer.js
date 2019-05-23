@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-
-const mtg = require('mtgsdk');
+import BoosterPack from './BoosterPack';
 
 export default class DrafterContainer extends Component {
     state = {
-        set = ''
+        setCode = '',
+        packs = ''
     };
 
     componentDidMount() {
         fetch(`https://api.magicthegathering.io/v1/sets/WAR`)
-        .then(response => response.json())
+        .then(set => set.json())
         .then(data => this.setState({
-            set: data
+            setCode: data["code"]
+        }))
+        .catch((errors) => {
+            console.log('Bolas has won')
+        });
+        fetch(`https://api.magicthegathering.io/v1/sets/WAR/booster`)
+        .then(booster => booster.json())
+        .then(data => this.setState({
+            packs: data
         }))
         .catch((errors) => {
             console.log('Bolas has won')
