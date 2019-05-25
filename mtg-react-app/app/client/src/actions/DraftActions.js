@@ -1,11 +1,11 @@
 export function fetchBooster() {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch({type: "LOADING_BOOSTER"});
-        return fetch(`https://api.magicthegathering.io/v1/sets/WAR/booster`).then(response => {
-            return response.json();
-        }).then(set => dispatch({
+        const response = await fetch(`https://api.magicthegathering.io/v1/sets/WAR/booster`);
+        const set = await response.json();
+        return dispatch({
             type: 'FETCH_CARDS', payload: set
-        }))
+        });
     }
 }
 

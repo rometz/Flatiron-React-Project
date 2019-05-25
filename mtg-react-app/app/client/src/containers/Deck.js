@@ -9,15 +9,17 @@ class Deck extends Component {
         boosterPack = ''
     }
 
-    packLoader = () => {
-
-    }
-
-    componentDidMount() {
-
+    handlePacks = props => {
+        const packs = props.fetchBooster()
     }
 
     render() {
-        
+        return (
+            <BoosterPack />
+        )
     }
 }
+
+const mapStateToProps = ({ }) => ({ });
+
+export default connect()(Deck);
