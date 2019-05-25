@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import BoosterPack from './BoosterPack';
+import Deck from './Deck';
 import { connect } from 'react-redux';
 
 class DrafterContainer extends Component {
 
+    componentDidMount() {
+        
+    }
+
     render() {
         return (
             <div>
-                <BoosterPack />
+                <Deck />
             </div>
         )
     }
 }
 
-const mapStateToProps = ({}) => ({});
-
-const mapDispatchToProps = dispatch => ({
-
-})
+export default DrafterContainer;
