@@ -9,3 +9,5 @@ const BoosterPack = props => {
         </div>
     )
 }
+
+export default BoosterPack;

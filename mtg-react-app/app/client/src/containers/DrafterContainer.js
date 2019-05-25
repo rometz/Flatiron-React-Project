@@ -12,7 +12,7 @@ class DrafterContainer extends Component {
     render() {
         return (
             <div>
-                <Deck pack={this.props.cards} />
+                <Deck packCards={this.props.cards} />
             </div>
         )
     }

@@ -4,13 +4,13 @@ import BoosterPack from './BoosterPack';
 
 class Deck extends Component {
     state = {
-        amount = 0,
-        cards = '',
-        boosterPack = ''
+        amount: 0,
+        cards: '',
+        boosterPack: ''
     }
 
     handlePacks = props => {
-        const packs = props.fetchBooster()
+        const packCards = props.fetchBooster()
     }
 
     render() {
