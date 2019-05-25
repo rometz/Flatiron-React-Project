@@ -10,7 +10,7 @@ class Deck extends Component {
     }
 
     handlePacks = props => {
-        const packCards = props.fetchBooster()
+        const packCards = props
     }
 
     render() {
