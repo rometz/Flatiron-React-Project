@@ -7,21 +7,28 @@ export function fetchDeck() {
         return dispatch({
             type: 'FETCH_DECK', payload: set
         });
-    }
-}
+    };
+};
 
 export function createDeck(name, size) {
     return async dispatch => {
-        const response = await fetch('draftingData', {
+        const response = await fetch('deckData', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, size })
         });
         const payload = await response.json();
         dispatch({ type: "CREATE_DECK", payload });
-    }
-}
+    };
+};
 
 export function deleteDeck(deckId) {
-
-}
+    return async dispatch => {
+        const response = await fetch(`/api/deck/${deckId}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        const payload = await response.json();
+        dispatch({ type: "DELETE_DECK", payload });
+    };
+};
