@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   scope '/api' do
     resources :decks
-    resources :cards
+    resources :cards do
+      delete :index, on: :collection, action: :delete_all
+    end
   end
+
 end
