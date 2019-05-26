@@ -11,3 +11,10 @@ export function fetchBooster() {
     }
 }
 
+export function fetchDeck() {
+    return async (dispatch) => {
+        dispatch({type: "LOADING_DECK"});
+        const targetUrl = '/api/deck'
+    }
+}
+

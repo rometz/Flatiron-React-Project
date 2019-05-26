@@ -15,7 +15,11 @@ class Deck extends Component {
 
     render() {
         return (
-            <BoosterPack />
+            <div>
+                
+                <BoosterPack />
+            </div>
+            
         )
     }
 }

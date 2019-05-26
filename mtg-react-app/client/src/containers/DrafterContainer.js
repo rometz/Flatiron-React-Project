@@ -3,18 +3,16 @@ import Deck from './Deck';
 import { fetchBooster } from '../actions/DraftActions';
 import { connect } from 'react-redux';
 
-const booster = this.props.fetchBooster();
-
 class DrafterContainer extends Component {
 
     componentDidMount() {
-        return booster
+        this.props.fetchBooster();
     };
 
     render() {
         return (
             <div>
-                <Deck packCards={this.props.cards} />
+                <Deck />
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import draftingReducer from './draftingReducer';
-import { combineReducers } from '../../../../../../../AppData/Local/Microsoft/TypeScript/3.4.5/node_modules/redux';
+import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
     drafts: draftingReducer
