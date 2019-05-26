@@ -20,6 +20,8 @@ class Deck extends Component {
     }
 }
 
-const mapStateToProps = ({ }) => ({ });
+const mapStateToProps = state => ({
+    
+})
 
 export default connect()(Deck);
