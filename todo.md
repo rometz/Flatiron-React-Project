@@ -4,7 +4,11 @@
 ** this process will continue until the deck has 40 cards **
 
 ** what this needs:
-    * a container to render all the cards of a booster pack *
-        * each card will be rendered as another container *
-            * the card container will render the component(s) of the cards of the booster pack *
+    * Backend rails-api for individual card data
+        * When a card is selected, a call will be made to a fetch(post) to add the card to the database, adding the card as being owned by the deck
+        * When a deck is deleted -- another draft started -- the current deck will be deleted as well as all held cards.
+        * This will be done to add viewing functionality -- a later feature.
+    * Redux for individual card additions to the deck
+    * All the actions to have the states updated
+    * state mapped to props for the containers down to the components
             
