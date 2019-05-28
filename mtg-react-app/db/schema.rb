@@ -10,14 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_21_230246) do
+ActiveRecord::Schema.define(version: 2019_05_28_232503) do
 
   create_table "cards", force: :cascade do |t|
     t.string "name"
-    t.string "set"
-    t.integer "multiverseid"
-    t.string "imageUrl"
-    t.string "deck_id"
+    t.integer "deck_id"
   end
 
   create_table "decks", force: :cascade do |t|
