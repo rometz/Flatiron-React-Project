@@ -21,3 +21,5 @@ function deckReducer(state = {
             return state
     }
 }
+
+export default deckReducer;
