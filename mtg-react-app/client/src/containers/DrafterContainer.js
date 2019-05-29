@@ -18,6 +18,6 @@ class DrafterContainer extends Component {
     }
 }
 
-const mapStateToProps = ({ pack }) => ({ pack });
+const mapStateToProps = ({ draftingData }) => ({ draftingData });
 
 export default connect(mapStateToProps, { fetchBooster })(DrafterContainer);
