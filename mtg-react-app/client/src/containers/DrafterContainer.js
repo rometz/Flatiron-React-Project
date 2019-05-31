@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Deck from './Deck';
+import DeckContainer from './DeckContainer';
 import { fetchBooster } from '../actions/DraftActions';
 import { connect } from 'react-redux';
 
@@ -12,12 +12,13 @@ class DrafterContainer extends Component {
     render() {
         return (
             <div>
-                <Deck />
+                <h1>Draft Your Deck</h1>
+                <DeckContainer />
             </div>
         )
     }
 }
 
-const mapStateToProps = ({ draftingData }) => ({ draftingData });
+const mapStateToProps = ({ drafts }) => ({ drafts });
 
 export default connect(mapStateToProps, { fetchBooster })(DrafterContainer);

@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BoosterPack from './BoosterPack';
+import Booster from '../components/Booster';
 
 
 class DeckContainer extends Component {
     state = {
         amount: 0,
-        cards: '',
-        boosterPack: ''
+        boosterPack: []
     }
 
     render() {
         return (
-            <div>
-                <BoosterPack />
+            <div>               
+                <Booster />
             </div>
             
         )
     }
 }
 
-const mapStateToProps = ({ deckData }) => ({ deckData });
+const mapStateToProps = ({ decks }) => ({ decks });
 
 const mapDispatchtoProps = dispatch => ({
     addDeck: array => dispatch({type: "CREATE_DECK", array}),
