@@ -10,10 +10,6 @@ class DrafterContainer extends Component {
         this.props.fetchBooster();
     };
 
-    handleCardChosen() {
-        
-    }
-
     render() {
         return (
             <div>

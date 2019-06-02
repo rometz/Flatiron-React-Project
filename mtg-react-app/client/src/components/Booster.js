@@ -5,6 +5,9 @@ class Booster extends Component {
         cards: []
     }
 
+    handleCardChosen() {
+        
+    }
 
     render() {
         return (
