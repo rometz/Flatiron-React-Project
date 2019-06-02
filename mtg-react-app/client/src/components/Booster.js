@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CardMapper from './Cards';
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
 
 class Booster extends Component {
     state = {
