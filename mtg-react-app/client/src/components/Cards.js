@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Cards extends Component {
+const CardMapper = props =>{
+    const Card = (props.card && props.cards.map())
 
-
-    render() {
-        return (
-            <p> Blah </p>
-        )
-    }
+    return (
+        <div>
+            {Card}
+        </div>
+    )    
 }
 
-export default Cards;
+export default CardMapper;
