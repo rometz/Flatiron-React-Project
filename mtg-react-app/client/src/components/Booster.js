@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
 import CardMapper from './Cards';
-//import { connect } from 'react-redux';
+import { fetchBooster } from '../actions/DraftActions';
+import { connect } from 'react-redux';
 
 class Booster extends Component {
     state = {
         cards: []
     }
 
+    handleFetchBooster() {
+        const pack = this.props.fetchBooster();
+        this.setState({
+            cards: pack
+        });
+    };
+
     render() {
         return (
-            <CardMapper />
+            <div>
+                <button onClick={this.handleFetchBooster()}>Open a Pack</button>
+                <CardMapper cardObjects={this.props.cardObjects} />
+            </div>
+            
         )
     }
 
 }
 
-export default Booster;
+const mapStateToProps = state => {
+    return {cardObjects: state.cards}
+}
+
+export default connect(mapStateToProps, {fetchBooster})(Booster);
