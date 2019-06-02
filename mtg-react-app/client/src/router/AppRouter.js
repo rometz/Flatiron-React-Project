@@ -7,7 +7,7 @@ function AppRouter() {
     return (
         <Router>
             <nav>
-                <Link to="/drafter/">Draft</Link>
+                <Link to="/drafter/">Draft Your Deck</Link>
             </nav>
 
             <Route path='/drafter/' exact component={DrafterContainer} />
