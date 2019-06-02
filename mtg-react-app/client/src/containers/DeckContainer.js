@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Booster from '../components/Booster';
+import CardMapper from '../components/Cards';
 
 class DeckContainer extends Component {
     state = {
@@ -9,8 +11,9 @@ class DeckContainer extends Component {
 
     render() {
         return (
-            <div>               
-                
+            <div>             
+                <Booster />
+                <CardMapper />
             </div>     
         )
     }

@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import DeckContainer from './DeckContainer';
 import Booster from '../components/Booster';
-import { fetchBooster } from '../actions/DraftActions';
 import { connect } from 'react-redux';
 
 class DrafterContainer extends Component {
-
-    componentDidMount() {
-        this.props.fetchBooster();
-    };
 
     render() {
         return (
             <div>
                 <h1>Draft Your Deck</h1>
-                <DeckContainer />
+                <div>
+                    <DeckContainer addDeck={this.props.addDeck}/>
+                </div>
                 <Booster />
             </div>
         )
@@ -23,4 +20,8 @@ class DrafterContainer extends Component {
 
 const mapStateToProps = ({ drafts }) => ({ drafts });
 
-export default connect(mapStateToProps, { fetchBooster })(DrafterContainer);
+const mapDispatchToProps = dispatch => ({
+    addDeck: array => dispatch({type: "CREATE_DECK", array})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DrafterContainer);
