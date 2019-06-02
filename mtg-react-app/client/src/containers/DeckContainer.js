@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Booster from '../components/Booster';
-
 
 class DeckContainer extends Component {
     state = {
@@ -12,9 +10,8 @@ class DeckContainer extends Component {
     render() {
         return (
             <div>               
-                <Booster />
-            </div>
-            
+                
+            </div>     
         )
     }
 }
