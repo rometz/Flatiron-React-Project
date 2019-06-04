@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Card from './Card';
 
-const CardMapper = props =>{
-    const Card = (props.card && props.cards.map())
+class CardMapper extends Component {
 
-    return (
-        <div>
-            {Card}
-        </div>
-    )    
+    renderCards = () => {
+        return this.props.cards.map(
+            idvCard => <Card />
+        )
+    }
+    render() {
+        return (
+            <ul>
+                {this.renderCards()}
+            </ul>
+        )   
+    } 
 }
 
 export default CardMapper;
