@@ -1,6 +1,6 @@
 function cardReducer(state = {
     loading: false,
-    cardData: []
+    cards: []
 }, action) {
     switch (action.type) {
 

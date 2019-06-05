@@ -16,8 +16,6 @@ class DrafterContainer extends Component {
         );
     }
 
-    getStore
-
     render() {
         return (
             <div>
@@ -40,7 +38,8 @@ const mapDispatchToProps = dispatch => ({
     addDeck: array => dispatch({type: "CREATE_DECK", array}),
     deleteDeck: id => dispatch({type: "DELETE_DECK", id}),
     deleteCards: text => dispatch({type: "DELETE_CARDS", text}),
-    grabBooster: object => dispatch({type: "FETCH_CARDS", object})
+    grabBooster: object => dispatch({type: "FETCH_CARDS", object}),
+    addCard: text => dispatch({type: "CREATE_CARD"}, text)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrafterContainer);
