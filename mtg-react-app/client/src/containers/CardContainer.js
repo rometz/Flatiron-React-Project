@@ -10,7 +10,7 @@ class CardsContainer extends Component {
     render() {
         return (
             <div>
-                <Cards />
+                <Cards fetchCard={this.props.fetchCard} createCard={this.props.createCard} cards={this.props.cards} />
             </div>
         )   
     } 
