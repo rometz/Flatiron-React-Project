@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
-import Deck from '../components/Deck';
-import Booster from '../components/Booster';
+import DeckContainer from './DeckContainer';
+import BoosterContainer from './BoosterContainer';
 import { connect } from 'react-redux';
+import { fetchBoosters } from '../actions/DraftActions';
+import CardsContainer from './CardContainer';
 
 class DrafterContainer extends Component {
     state = {
         deckSize: 0,
-        boosterPack: [],
         deck: []
     }
 
     componentDidMount() {
-        this.props.addDeck(
-            this.state.deck
-        );
+        this.props.fetchBoosters();
     }
 
     render() {
         return (
             <div>
-                <Deck />
-                <Booster boosters={this.props.grabBooster}/>
+                <CardsContainer />
+                <DeckContainer />
+                <BoosterContainer />
             </div>
         )
     }
 }
 
+// simplify mapDispatchToProps
+// move to a presentational/rendering component Drafter.js in components
+
 const mapStateToProps = state => {
+    console.log(state);
     return {
         decks: state.decks,
         drafts: state.drafts,
@@ -34,12 +38,5 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    addDeck: array => dispatch({type: "CREATE_DECK", array}),
-    deleteDeck: id => dispatch({type: "DELETE_DECK", id}),
-    deleteCards: text => dispatch({type: "DELETE_CARDS", text}),
-    grabBooster: object => dispatch({type: "FETCH_CARDS", object}),
-    addCard: text => dispatch({type: "CREATE_CARD"}, text)
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(DrafterContainer);
+export default connect(mapStateToProps, { fetchBoosters })(DrafterContainer);
