@@ -8,7 +8,7 @@ class DeckContainer extends Component {
     render() {
         return (
             <div>
-                <DeckInput addDeck={this.props.addDeck} fetchCards={this.props.fetchCards} /> 
+                <DeckInput addDeck={this.props.addDeck} /> 
                 <Deck cards={this.props.cards} currentDeck={this.props.decks} />
             </div>     
         )
@@ -23,8 +23,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchDeck: id => dispatch({type: "FETCH_DECK", id}),
-    fetchCards: text => dispatch({type: "FETCH_CARDS", text})
+    fetchDeck: id => dispatch({type: "FETCH_DECK", id})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckContainer);

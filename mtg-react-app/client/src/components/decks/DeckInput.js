@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 class DeckInput extends Component {
     state = {
-        text: '',
-        deck: []
+        text: ''
     }
 
     handleChange(e) {
@@ -14,11 +13,9 @@ class DeckInput extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const cards = this.props.fetchCards
         this.props.addRestaurant(this.state.text)
         this.setState({
             text: '',
-            deck: cards
         });
     };
 

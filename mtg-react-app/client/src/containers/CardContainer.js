@@ -17,11 +17,14 @@ class CardsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-
+    return {
+        cards: state.cards
+    }
 }
 
-const mapDispatchToProps = state => {
-    
-}
+const mapDispatchToProps = dispatch => ({
+    createCard: text => dispatch({type: "CREATE_CARE", text}),
+    fetchCard: text => dispatch({type: "FETCH_CARD", text})
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardsContainer);
