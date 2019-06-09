@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 
 class DeckInput extends Component {
+    /*
     state = {
         text: ''
+    }
+    */
+    constructor() {
+        super();
+        this.state = { text: '' };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -13,7 +20,8 @@ class DeckInput extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.addRestaurant(this.state.text)
+        console.log(this.props)
+        this.props.addDeck(this.state.text)
         this.setState({
             text: '',
         });
