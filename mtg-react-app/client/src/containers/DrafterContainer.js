@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DeckContainer from './DeckContainer';
 import BoosterContainer from './BoosterContainer';
 import { connect } from 'react-redux';
-import { fetchBoosters } from '../actions/DraftActions';
+import { fetchBooster } from '../actions/DraftActions';
 import CardsContainer from './CardContainer';
 
 class DrafterContainer extends Component {
@@ -12,7 +12,7 @@ class DrafterContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchBoosters();
+        this.props.fetchBooster();
     }
 
     render() {
@@ -39,4 +39,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { fetchBoosters })(DrafterContainer);
+export default connect(mapStateToProps, { fetchBooster })(DrafterContainer);

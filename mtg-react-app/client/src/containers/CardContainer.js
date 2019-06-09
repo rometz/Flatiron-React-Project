@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    createCard: text => dispatch({type: "CREATE_CARE", text}),
+    createCard: text => dispatch({type: "CREATE_CARD", text}),
     fetchCard: text => dispatch({type: "FETCH_CARD", text})
 })
 

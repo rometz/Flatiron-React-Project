@@ -3,10 +3,11 @@ import Card from './Card';
 
 class Cards extends Component {
 
-    renderCards = () => {
+    // Functions are not valid as a React child
+    renderCards() {
         console.log(this.props)
-        return this.props.cards.map(
-            idvCard => <Card key={idvCard.id} idvCard={idvCard.name} text={idvCard.text} manaCost={idvCard.manaCost} />
+        return this.props.cards.cardData.map(
+            idvCard => <Card key={idvCard.id} name={idvCard.name} text={idvCard.text} manaCost={idvCard.manaCost} />
         )
     }
 

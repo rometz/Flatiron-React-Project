@@ -5,6 +5,7 @@ class Card extends Component {
 
 
     render () {
+        console.log(this.props);
         const { idvCard } = this.props;
 
         return (

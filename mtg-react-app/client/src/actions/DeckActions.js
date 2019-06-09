@@ -3,7 +3,7 @@ export function fetchDeck() {
         dispatch({type: "LOADING_DECK"});
         const targetUrl = '/api/decks/';
         const response = await fetch(targetUrl);
-        const set = await response.json()[0];
+        const set = await response.json();
         return dispatch({
             type: 'FETCH_DECK', payload: set
         });

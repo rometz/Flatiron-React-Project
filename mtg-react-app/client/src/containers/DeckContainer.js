@@ -17,13 +17,13 @@ class DeckContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        decks: state.decks,
+        decks: state.decks.JSON,
         cards: state.cards
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchDeck: id => dispatch({type: "FETCH_DECK", id})
+    fetchDeck: text => dispatch({type: "FETCH_DECK", text})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckContainer);
