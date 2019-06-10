@@ -4,9 +4,10 @@ export function fetchBooster() {
         const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
         const targetUrl = 'https://api.magicthegathering.io/v1/sets/WAR/booster';
         const response = await fetch(proxyUrl + targetUrl);
-        const set = await response.json();     
+        const set = await response.json();
+        const data = await set["cards"];
         return dispatch({
-            type: 'FETCH_CARDS', payload: set.cards
+            type: 'FETCH_CARDS', payload: data
         });
     }
 }

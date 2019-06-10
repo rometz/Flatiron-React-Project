@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CardMapper from './CardContainer';
+import CardsContainer from './CardContainer';
 import { fetchBooster } from '../actions/DraftActions';
 import { connect } from 'react-redux';
 
@@ -7,26 +7,27 @@ class BoosterContainer extends Component {
     constructor() {
         super();
         this.state = {
-            cards: "Ultimate Victory"
+            cards: []
         }
     }
 
     handleFetchBooster() {
        // e.preventPropagation();
-        const pack = this.props.fetchBooster();
-        console.log(pack)
-        this.setState({           
-            cards: pack
-        });
-
+        const pack = [];
+        this.props.fetchBooster();
+        const packPromise = this.props.draftObjects.draftingData;
+        const packState = [...pack, packPromise];
+        console.log(packState);
+        console.log(packPromise);
         console.log(this.state)
+           
     };
 
     render() {
         return (
             <div>
                 <button onClick={() => this.handleFetchBooster()}>Open a Pack</button>
-                <CardMapper cardObjects={this.props.cardObjects} />
+                <CardsContainer cardObjects={this.props.cardObjects} />
             </div>
             
         )
@@ -35,7 +36,10 @@ class BoosterContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    return {cardObjects: state.cards}
+    return {
+        cardObjects: state.cards,
+        draftObjects: state.drafts
+    }
 }
 
 export default connect(mapStateToProps, {fetchBooster})(BoosterContainer);
