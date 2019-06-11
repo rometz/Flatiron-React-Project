@@ -17,6 +17,9 @@ class BoosterContainer extends Component {
         this.props.fetchBooster();
         const packPromise = this.props.draftObjects.draftingData;
         const packState = [...pack, packPromise];
+        this.setState({
+            cards: [...this.state.cards, packState]
+        });
         console.log(packState);
         console.log(packPromise);
         console.log(this.state)
@@ -27,7 +30,7 @@ class BoosterContainer extends Component {
         return (
             <div>
                 <button onClick={() => this.handleFetchBooster()}>Open a Pack</button>
-                <CardsContainer cardObjects={this.props.cardObjects} />
+                <CardsContainer cardObjects={this.state.cards} />
             </div>
             
         )
@@ -37,7 +40,6 @@ class BoosterContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        cardObjects: state.cards,
         draftObjects: state.drafts
     }
 }
