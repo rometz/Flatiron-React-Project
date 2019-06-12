@@ -3,7 +3,6 @@ import DeckContainer from './DeckContainer';
 import BoosterContainer from './BoosterContainer';
 import { connect } from 'react-redux';
 import { fetchBooster } from '../actions/DraftActions';
-import CardsContainer from './CardContainer';
 
 class DrafterContainer extends Component {
     state = {
@@ -11,14 +10,9 @@ class DrafterContainer extends Component {
         deck: []
     }
 
-    componentDidMount() {
-        this.props.fetchBooster();
-    }
-
     render() {
         return (
             <div>
-                <CardsContainer />
                 <DeckContainer />
                 <BoosterContainer />
             </div>
