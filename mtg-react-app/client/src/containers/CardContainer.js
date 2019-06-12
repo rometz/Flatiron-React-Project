@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
-import Cards from '../components/Cards/Cards';
+import Card from '../components/Card';
 import { connect } from 'react-redux';
 
 class CardsContainer extends Component {
-    state = {
-        cardData: []
+    constructor(props){
+        super(props);
+        this.renderCardsProps = this.renderCardsProps.bind(this)
+        this.state = {
+            cards: []
+        }
+    }
+
+    handleAddCard() {
+        this.props.addCard(this.state.cardData)
+    }
+
+    renderCardsProps() {
+        console.log(this.props.draftObjects);
+        const cardProps = this.props.draftObjects.draftingData;
+        console.log(cardProps);
+        return cardProps.map(
+            idvCard => <Card key={idvCard.id} name={idvCard.name} text={idvCard.text} manaCost={idvCard.manaCost} />
+        )
     }
 
     render() {
         return (
             <div>
-                <Cards fetchCard={this.props.fetchCard} createCard={this.props.createCard} cards={this.props.cards} />
+                {this.renderCardsProps()}
             </div>
         )   
     } 
@@ -18,7 +35,7 @@ class CardsContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        cards: state.cards
+        draftObjects: state.drafts
     }
 }
 
