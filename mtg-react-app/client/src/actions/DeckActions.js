@@ -10,12 +10,12 @@ export function fetchDeck() {
     };
 };
 
-export function createDeck(name, size) {
+export function createDeck(name) {
     return async dispatch => {
         const response = await fetch('deckData', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, size })
+            body: JSON.stringify({ name })
         });
         const payload = await response.json();
         dispatch({ type: "CREATE_DECK", payload });

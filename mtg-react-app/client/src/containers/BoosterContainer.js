@@ -13,7 +13,7 @@ class BoosterContainer extends Component {
         return (
             <div>
                 <button onClick={() => this.handleFetchBooster()}>Open a Pack</button>
-                <CardsContainer />
+                <CardsContainer handleFetchBooster={() => this.handleFetchBooster()}/>
             </div>
             
         )

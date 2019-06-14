@@ -1,9 +1,9 @@
-export function createCard(/* card params */) {
+export function createCard(event, name) {
     return async dispatch => {
         const response = await fetch('cardData', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ /* card params */ })
+            body: JSON.stringify({event, name})
         });
         const payload = await response.json();
         dispatch({ type: "CREATE_CARD", payload });

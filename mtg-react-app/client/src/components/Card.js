@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Card = props => <div>
+const Card = props => <div >
     <ul>
-        <div onClick={() => props.handleAddCard}>
-            <li>{props.name}</li>
-            <li>{props.manaCost}</li>
-            <li>{props.text}</li>
+        <div className="mtg-card">
+            <li id="mtg-card-name" onClick={(e) => props.handleAddCard(e)} >{props.name}</li>
+            <li id="mtg-card-manaCost">{props.manaCost}</li>
+            <li id="mtg-card-text">{props.text}</li>
         </div>
         
     </ul>

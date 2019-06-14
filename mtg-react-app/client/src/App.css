@@ -31,3 +31,27 @@
     transform: rotate(360deg);
   }
 }
+
+.mtg-cards {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, 15rem);
+  grid-gap: 1.5rem;
+  justify-content: space-between;
+  align-content: flex-start;
+  margin: 0 auto 5rem;
+  padding: 1rem;
+  max-width: 960px;
+}
+
+.mtg-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 3px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: all .3s;
+}
