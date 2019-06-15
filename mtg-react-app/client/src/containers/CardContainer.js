@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Card from '../components/Card';
 import { connect } from 'react-redux';
+import { createCard } from '../actions/CardActions';
+import { fetchBooster } from '../actions/DraftActions';
 
 class CardsContainer extends Component {
     constructor(props){
@@ -12,20 +14,21 @@ class CardsContainer extends Component {
         }
     }
 
+    handleFetchBooster() {
+        this.props.fetchBooster();    
+    };
+
     handleAddCard(e) {
-      //  this.props.createCard(e.target.name);
-        const card = e.target.innerText;
-        console.log(this.props.deckObject);
-        if ( this.props.deckObject === null || undefined ) {
-            this.props.createDeck(card)
-        }
-        this.props.createCard(card);
+        const cardName = e.target.innerText;
+        const id = e.target.attributes.cardid.value;       
+        this.props.createCard(cardName, id);
+        console.log(this.props.createCard())
         console.log(this.props.cardObject)
         this.setState({
-            cards: [...this.state.cards, card]
+            cards: [...this.state.cards, cardName]
         });
         if ( this.state.cardCount < 40 ) {
-            this.props.handleFetchBooster();
+            this.handleFetchBooster();
             this.handleCardCounter();
         }    
     }
@@ -42,7 +45,7 @@ class CardsContainer extends Component {
         console.log(this.state.cardCount);
         if ( this.state.cardCount < 40 ) {
         return cardProps.map(
-            idvCard => <Card key={idvCard.id} name={idvCard.name} text={idvCard.text} manaCost={idvCard.manaCost} handleAddCard={(e) => this.handleAddCard(e)} />
+            idvCard => <Card key={idvCard.id} cardId={idvCard.id} name={idvCard.name} text={idvCard.text} manaCost={idvCard.manaCost} handleAddCard={(e) => this.handleAddCard(e)} />
         )} else {
             return <h3>Your Deck Is Complete</h3>
         }
@@ -50,9 +53,15 @@ class CardsContainer extends Component {
 
     render() {
         return (
-            <div className="mtg-cards">
-                {this.renderCardsProps()}
+            <div>
+                <div>
+                    <button onClick={() => this.handleFetchBooster()}>Open a Pack</button>
+                </div>
+                <div className="mtg-cards">
+                    {this.renderCardsProps()}
+                </div>
             </div>
+            
         )   
     } 
 }
@@ -65,10 +74,4 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    createCard: text => dispatch({type: "CREATE_CARD", text }),
-    fetchCard: text => dispatch({type: "FETCH_CARD", text }),
-    createDeck: text => dispatch({type: "CREATE_DECK", text })
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CardsContainer);
+export default connect(mapStateToProps, { createCard, fetchBooster })(CardsContainer);

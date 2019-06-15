@@ -1,18 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import DrafterContainer from '../containers/DrafterContainer';
+import CardsContainer from '../containers/CardContainer';
+import DeckContainer from '../containers/DeckContainer';
 /* home, about, header, footer, */
 
-function AppRouter() {
+function AppRouter() { 
+
     return (
         <Router>
             <nav>
-                <Link to="/drafter/">Draft Your Deck</Link>
+                <Link to="/deck/">Your Deck</Link><br></br>
+                <Link to="/drafter/">Draft</Link>
             </nav>
 
-            <Route path='/drafter/' exact component={DrafterContainer} />
+            <Route path='/drafter/' exact component={CardsContainer} />
+            <Route path='/deck/' exact component={DeckContainer} />
         </Router>
-    )
+    )   
 }
+
 
 export default AppRouter;

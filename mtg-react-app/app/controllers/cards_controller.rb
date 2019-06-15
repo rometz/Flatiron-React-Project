@@ -11,7 +11,7 @@ class CardsController < ApplicationController
     end
 
     def create
-        @card = Card.create(card_params)
+        @card = Card.create!(card_params)
         render json: @card
     end
 
@@ -22,6 +22,6 @@ class CardsController < ApplicationController
     private
 
     def card_params
-        params.require(:card).permit(:name, :id)
+        params.permit(:name, :id)
     end
 end

@@ -3,7 +3,7 @@ function cardReducer(state = {
     cardData: []
 }, action) {
     switch (action.type) {
-
+        
         case "LOADING_CARD":
             return {...state, loading: true, cardData: []}
 
