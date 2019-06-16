@@ -5384,3 +5384,2269 @@ Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 10.3ms)
 Completed 200 OK in 32ms (Views: 0.4ms | ActiveRecord: 8.9ms)
 
 
+Started POST "/api/cards" for ::1 at 2019-06-15 13:00:43 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:00:43 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Parameters: {"name"=>"Ravnica at War", "id"=>"fd118367-0a3b-5525-9a37-09169c2f7b7e", "card"=>{"id"=>"fd118367-0a3b-5525-9a37-09169c2f7b7e", "name"=>"Ravnica at War"}}
+Processing by CardsController#create as */*
+Unpermitted parameter: :card
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+Unpermitted parameter: :card
+  [1m[36mCard Create (0.8ms)[0m  [1m[32mINSERT INTO "cards" ("id", "name") VALUES (?, ?)[0m  [["id", 0], ["name", "Ravnica at War"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCard Create (1.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.9ms)
+
+
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: cards.id: INSERT INTO "cards" ("id", "name") VALUES (?, ?)):
+  ↳ app/controllers/cards_controller.rb:14
+  
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 10.9ms)
+
+
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:01:28 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:01:28 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Chandra, Fire Artisan", "id"=>"72506474-5afd-51c4-aec1-9af7e396d5cc", "card"=>{"id"=>"72506474-5afd-51c4-aec1-9af7e396d5cc", "name"=>"Chandra, Fire Artisan"}}
+  Parameters: {"card"=>{}}
+Unpermitted parameter: :card
+Unpermitted parameter: :card
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" ("id", "name") VALUES (?, ?)[0m  [["id", 72506474], ["name", "Chandra, Fire Artisan"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (5049.5ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[35m (15.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 5075ms (Views: 0.4ms | ActiveRecord: 17.4ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5076ms (ActiveRecord: 5049.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:02:01 -0500
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Mobilized District", "id"=>"93d800cb-da41-5e80-8020-2e8a46ef7f90", "card"=>{"id"=>"93d800cb-da41-5e80-8020-2e8a46ef7f90", "name"=>"Mobilized District"}}
+Unpermitted parameter: :card
+Started POST "/api/cards" for ::1 at 2019-06-15 13:02:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (2.0ms)[0m  [1m[32mINSERT INTO "cards" ("id", "name") VALUES (?, ?)[0m  [["id", 93], ["name", "Mobilized District"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (18.5ms)[0m  [1m[36mcommit transaction[0m
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 20.6ms)
+
+
+Unpermitted parameter: :card
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.6ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-15 13:04:10 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:04:10 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Ignite the Beacon", "id"=>"c9c90c71-fe4e-50f3-b9ff-38f46bdcbce7", "card"=>{"id"=>"c9c90c71-fe4e-50f3-b9ff-38f46bdcbce7", "name"=>"Ignite the Beacon"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.2ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Ignite the Beacon"], ["multiverseid", "c9c90c71-fe4e-50f3-b9ff-38f46bdcbce7"]]
+  [1m[36mCard Create (5046.8ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5069ms (ActiveRecord: 5046.9ms)
+
+
+  
+Completed 200 OK in 5072ms (Views: 0.4ms | ActiveRecord: 16.8ms)
+
+
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:05:14 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:05:14 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Krenko, Tin Street Kingpin", "id"=>"a0013c71-c3df-5556-bea9-c69f472bc2c7", "card"=>{"id"=>"a0013c71-c3df-5556-bea9-c69f472bc2c7", "name"=>"Krenko, Tin Street Kingpin"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.6ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Krenko, Tin Street Kingpin"], ["multiverseid", "a0013c71-c3df-5556-bea9-c69f472bc2c7"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (5066.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+Completed 200 OK in 5073ms (Views: 0.3ms | ActiveRecord: 16.8ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5075ms (ActiveRecord: 5066.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:06:12 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:06:12 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Jace, Wielder of Mysteries", "id"=>"1fc0a883-ce23-5fa6-84ad-3b348ea5b776", "card"=>{"id"=>"1fc0a883-ce23-5fa6-84ad-3b348ea5b776", "name"=>"Jace, Wielder of Mysteries"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (5045.7ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.2ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Jace, Wielder of Mysteries"], ["multiverseid", "1fc0a883-ce23-5fa6-84ad-3b348ea5b776"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 5067ms (ActiveRecord: 5045.8ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5074ms (Views: 0.4ms | ActiveRecord: 17.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:14:12 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:14:12 -0500
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Karn's Bastion", "id"=>"a3246470-8441-5f05-a712-185cd67f1053", "card"=>{"id"=>"a3246470-8441-5f05-a712-185cd67f1053", "name"=>"Karn's Bastion"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Karn's Bastion"], ["multiverseid", "a3246470-8441-5f05-a712-185cd67f1053"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 14.9ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15ms (Views: 1.0ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-15 13:15:32 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:15:32 -0500
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Mobilized District", "id"=>"93d800cb-da41-5e80-8020-2e8a46ef7f90", "card"=>{"id"=>"93d800cb-da41-5e80-8020-2e8a46ef7f90", "name"=>"Mobilized District"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Mobilized District"], ["multiverseid", "93d800cb-da41-5e80-8020-2e8a46ef7f90"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCard Create (1.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 10.1ms)
+
+
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-15 13:15:55 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:15:55 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Dreadhorde Invasion", "id"=>"0c51418d-c492-5e4d-88c2-68d08b734611", "card"=>{"id"=>"0c51418d-c492-5e4d-88c2-68d08b734611", "name"=>"Dreadhorde Invasion"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Dreadhorde Invasion"], ["multiverseid", "0c51418d-c492-5e4d-88c2-68d08b734611"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (5047.8ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 5077ms (Views: 0.5ms | ActiveRecord: 22.8ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5078ms (ActiveRecord: 5047.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:19:06 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:19:06 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Teferi, Time Raveler", "id"=>"7d8e9b39-11b3-5e45-a246-93b962f404b3", "card"=>{"id"=>"7d8e9b39-11b3-5e45-a246-93b962f404b3", "name"=>"Teferi, Time Raveler"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.8ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (5048.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Teferi, Time Raveler"], ["multiverseid", "7d8e9b39-11b3-5e45-a246-93b962f404b3"]]
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5071ms (Views: 0.4ms | ActiveRecord: 17.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5074ms (ActiveRecord: 5048.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:19:58 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:19:58 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Feather, the Redeemed", "id"=>"abcf1e62-1744-5c16-961d-97c7d5db3744", "card"=>{"id"=>"abcf1e62-1744-5c16-961d-97c7d5db3744", "name"=>"Feather, the Redeemed"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Feather, the Redeemed"], ["multiverseid", "abcf1e62-1744-5c16-961d-97c7d5db3744"]]
+  [1m[36mCard Create (5050.8ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 5072ms (Views: 0.3ms | ActiveRecord: 15.4ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5073ms (ActiveRecord: 5051.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started GET "/drafter/%3Canonymous%3E" for 127.0.0.1 at 2019-06-15 13:20:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/drafter/%3Canonymous%3E"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:20:54 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:20:54 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Interplanar Beacon", "id"=>"dd492228-9c9f-509d-bf22-317d8ca51cd9", "card"=>{"id"=>"dd492228-9c9f-509d-bf22-317d8ca51cd9", "name"=>"Interplanar Beacon"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (5045.2ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Interplanar Beacon"], ["multiverseid", "dd492228-9c9f-509d-bf22-317d8ca51cd9"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5067ms (Views: 0.4ms | ActiveRecord: 16.0ms)
+
+
+Completed 500 Internal Server Error in 5068ms (ActiveRecord: 5045.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:21:43 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:21:43 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Domri, Anarch of Bolas", "id"=>"0e333d4e-c131-52e3-87ca-20f8ac8f0709", "card"=>{"id"=>"0e333d4e-c131-52e3-87ca-20f8ac8f0709", "name"=>"Domri, Anarch of Bolas"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (5051.0ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Domri, Anarch of Bolas"], ["multiverseid", "0e333d4e-c131-52e3-87ca-20f8ac8f0709"]]
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 5074ms (ActiveRecord: 5051.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  ↳ app/controllers/cards_controller.rb:14
+  
+Completed 200 OK in 5077ms (Views: 0.4ms | ActiveRecord: 17.5ms)
+
+
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:22:53 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:22:53 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Sarkhan the Masterless", "id"=>"659b84c1-572a-5912-bf19-7018b2a4bdb2", "card"=>{"id"=>"659b84c1-572a-5912-bf19-7018b2a4bdb2", "name"=>"Sarkhan the Masterless"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.9ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (5045.7ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Sarkhan the Masterless"], ["multiverseid", "659b84c1-572a-5912-bf19-7018b2a4bdb2"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5069ms (ActiveRecord: 5045.8ms)
+
+
+  
+Completed 200 OK in 5068ms (Views: 0.3ms | ActiveRecord: 16.3ms)
+
+
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:23:14 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:23:14 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Ugin, the Ineffable", "id"=>"43ee2f67-2fde-50b2-9676-099bfa0333bc", "card"=>{"id"=>"43ee2f67-2fde-50b2-9676-099bfa0333bc", "name"=>"Ugin, the Ineffable"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Ugin, the Ineffable"], ["multiverseid", "43ee2f67-2fde-50b2-9676-099bfa0333bc"]]
+  [1m[36mCard Create (5046.6ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (18.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5072ms (ActiveRecord: 5046.7ms)
+
+
+  
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5076ms (Views: 0.3ms | ActiveRecord: 20.1ms)
+
+
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:23:52 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:23:52 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Sorin, Vengeful Bloodlord", "id"=>"ed7d123c-0593-553d-8ade-a707e7567f90", "card"=>{"id"=>"ed7d123c-0593-553d-8ade-a707e7567f90", "name"=>"Sorin, Vengeful Bloodlord"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (5047.7ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Sorin, Vengeful Bloodlord"], ["multiverseid", "ed7d123c-0593-553d-8ade-a707e7567f90"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (30.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5086ms (Views: 0.2ms | ActiveRecord: 31.9ms)
+
+
+Completed 500 Internal Server Error in 5086ms (ActiveRecord: 5047.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:24:52 -0500
+Processing by CardsController#create as */*
+Started POST "/api/cards" for ::1 at 2019-06-15 13:24:52 -0500
+  Parameters: {"name"=>"Blast Zone", "id"=>"368f7fdc-06f7-5f75-b5aa-09d9a5f4caee", "card"=>{"id"=>"368f7fdc-06f7-5f75-b5aa-09d9a5f4caee", "name"=>"Blast Zone"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.2ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Blast Zone"], ["multiverseid", "368f7fdc-06f7-5f75-b5aa-09d9a5f4caee"]]
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (21.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 23.0ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-15 13:25:18 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:25:18 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Domri, Anarch of Bolas", "id"=>"0e333d4e-c131-52e3-87ca-20f8ac8f0709", "card"=>{"id"=>"0e333d4e-c131-52e3-87ca-20f8ac8f0709", "name"=>"Domri, Anarch of Bolas"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Domri, Anarch of Bolas"], ["multiverseid", "0e333d4e-c131-52e3-87ca-20f8ac8f0709"]]
+  [1m[36mCard Create (5048.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5070ms (Views: 0.4ms | ActiveRecord: 15.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5071ms (ActiveRecord: 5048.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:25:39 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:25:39 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Narset's Reversal", "id"=>"4de3df16-b375-5010-b45a-d680c5315c02", "card"=>{"id"=>"4de3df16-b375-5010-b45a-d680c5315c02", "name"=>"Narset's Reversal"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Narset's Reversal"], ["multiverseid", "4de3df16-b375-5010-b45a-d680c5315c02"]]
+  [1m[36mCard Create (5048.7ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5073ms (Views: 0.4ms | ActiveRecord: 16.4ms)
+
+
+Completed 500 Internal Server Error in 5072ms (ActiveRecord: 5048.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:25:56 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:25:56 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Narset's Reversal", "id"=>"4de3df16-b375-5010-b45a-d680c5315c02", "card"=>{"id"=>"4de3df16-b375-5010-b45a-d680c5315c02", "name"=>"Narset's Reversal"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.6ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (5047.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Narset's Reversal"], ["multiverseid", "4de3df16-b375-5010-b45a-d680c5315c02"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5068ms (Views: 0.4ms | ActiveRecord: 15.6ms)
+
+
+Completed 500 Internal Server Error in 5070ms (ActiveRecord: 5047.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:26:16 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:26:16 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Jace, Wielder of Mysteries", "id"=>"1fc0a883-ce23-5fa6-84ad-3b348ea5b776", "card"=>{"id"=>"1fc0a883-ce23-5fa6-84ad-3b348ea5b776", "name"=>"Jace, Wielder of Mysteries"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (2.0ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (5044.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Jace, Wielder of Mysteries"], ["multiverseid", "1fc0a883-ce23-5fa6-84ad-3b348ea5b776"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5068ms (ActiveRecord: 5044.5ms)
+
+
+  
+Completed 200 OK in 5068ms (Views: 0.3ms | ActiveRecord: 15.8ms)
+
+
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:48:58 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:48:58 -0500
+  
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateCards (20190528232503)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "cards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "multiverseid" varchar)[0m
+  ↳ db/migrate/20190528232503_create_cards.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190528232503"]]
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (19.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-15 18:49:15.270137"], ["updated_at", "2019-06-15 18:49:15.270137"]]
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/bin/rake:23
+Started POST "/api/cards" for ::1 at 2019-06-15 13:49:29 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:49:29 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Mobilized District", "id"=>"93d800cb-da41-5e80-8020-2e8a46ef7f90", "card"=>{"id"=>"93d800cb-da41-5e80-8020-2e8a46ef7f90", "name"=>"Mobilized District"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Mobilized District"], ["multiverseid", "93d800cb-da41-5e80-8020-2e8a46ef7f90"]]
+  [1m[36mCard Create (5053.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5081ms (Views: 0.5ms | ActiveRecord: 17.7ms)
+
+
+Completed 500 Internal Server Error in 5078ms (ActiveRecord: 5053.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:52:30 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:52:30 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Parameters: {"card"=>{}}
+Processing by CardsController#create as */*
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"name"=>"Tolsimir, Friend to Wolves", "id"=>"b045efcc-e64e-5916-b6fb-b42ba67df718", "card"=>{"id"=>"b045efcc-e64e-5916-b6fb-b42ba67df718", "name"=>"Tolsimir, Friend to Wolves"}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (5049.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Tolsimir, Friend to Wolves"], ["multiverseid", "b045efcc-e64e-5916-b6fb-b42ba67df718"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 5076ms (Views: 0.5ms | ActiveRecord: 17.2ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 5073ms (ActiveRecord: 5049.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:55:33 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:55:33 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Gideon's Battle Cry", "id"=>"0d183770-9055-51c9-9995-e59279b23acb", "card"=>{"id"=>"0d183770-9055-51c9-9995-e59279b23acb", "name"=>"Gideon's Battle Cry"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Gideon's Battle Cry"], ["multiverseid", "0d183770-9055-51c9-9995-e59279b23acb"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.8ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 9.7ms)
+
+
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 14.1ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-15 13:55:59 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:55:59 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Ral, Storm Conduit", "id"=>"fd50e62d-1fa8-5bcc-98af-1245e7265e26", "card"=>{"id"=>"fd50e62d-1fa8-5bcc-98af-1245e7265e26", "name"=>"Ral, Storm Conduit"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Ral, Storm Conduit"], ["multiverseid", "fd50e62d-1fa8-5bcc-98af-1245e7265e26"]]
+  [1m[36mCard Create (10086.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 10108ms (Views: 0.4ms | ActiveRecord: 15.7ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 10109ms (ActiveRecord: 10086.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-15 13:56:35 -0500
+Started POST "/api/cards" for ::1 at 2019-06-15 13:56:35 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"name"=>"Jaya, Venerated Firemage", "id"=>"c9aa8e69-b9c2-5f36-908c-3b0d3d6b3a8a", "card"=>{"id"=>"c9aa8e69-b9c2-5f36-908c-3b0d3d6b3a8a", "name"=>"Jaya, Venerated Firemage"}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15116.2ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Jaya, Venerated Firemage"], ["multiverseid", "c9aa8e69-b9c2-5f36-908c-3b0d3d6b3a8a"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15141ms (ActiveRecord: 15116.3ms)
+
+
+Completed 200 OK in 15144ms (Views: 0.5ms | ActiveRecord: 18.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:14 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:14 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Bolas's Citadel", "id"=>"af568e8c-246e-546a-be2f-b76e4f06b9e1", "card"=>{"id"=>"af568e8c-246e-546a-be2f-b76e4f06b9e1", "name"=>"Bolas's Citadel"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (15132.6ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Bolas's Citadel"], ["multiverseid", "af568e8c-246e-546a-be2f-b76e4f06b9e1"]]
+  ↳ app/controllers/cards_controller.rb:14
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:29 -0500
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:29 -0500
+  ↳ app/controllers/cards_controller.rb:14
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:29 -0500
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"name"=>"Gideon's Battle Cry", "id"=>"0d183770-9055-51c9-9995-e59279b23acb", "card"=>{"id"=>"0d183770-9055-51c9-9995-e59279b23acb", "name"=>"Gideon's Battle Cry"}}
+Completed 500 Internal Server Error in 15164ms (ActiveRecord: 15132.7ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15177ms (Views: 0.5ms | ActiveRecord: 17.5ms)
+
+
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Ajani, the Greathearted", "id"=>"66164eca-e6a5-5f7d-b47a-28ea086411ab", "card"=>{"id"=>"66164eca-e6a5-5f7d-b47a-28ea086411ab", "name"=>"Ajani, the Greathearted"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  
+  [1m[36mCard Create (2.1ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Ajani, the Greathearted"], ["multiverseid", "66164eca-e6a5-5f7d-b47a-28ea086411ab"]]
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:29 -0500
+Processing by CardsController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  
+  ↳ app/controllers/cards_controller.rb:14
+Processing by CardsController#create as */*
+app/controllers/cards_controller.rb:14:in `create'
+  [1m[36mCard Create (2.6ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Gideon's Battle Cry"], ["multiverseid", "0d183770-9055-51c9-9995-e59279b23acb"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"name"=>"Nahiri, Storm of Stone", "id"=>"48463bfb-25fb-5af0-a376-eb229261ed22", "card"=>{"id"=>"48463bfb-25fb-5af0-a376-eb229261ed22", "name"=>"Nahiri, Storm of Stone"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:29 -0500
+  [1m[35m (16.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15131.1ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Nahiri, Storm of Stone"], ["multiverseid", "48463bfb-25fb-5af0-a376-eb229261ed22"]]
+  [1m[36mCard Create (2.7ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+Processing by CardsController#create as */*
+Completed 200 OK in 15306ms (Views: 0.3ms | ActiveRecord: 18.2ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15320ms (Views: 0.3ms | ActiveRecord: 18.7ms)
+
+
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:44 -0500
+Completed 200 OK in 15308ms (Views: 0.3ms | ActiveRecord: 19.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:44 -0500
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15184ms (ActiveRecord: 15131.3ms)
+
+
+  [1m[36mCard Create (2.6ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Sorin, Vengeful Bloodlord", "id"=>"ed7d123c-0593-553d-8ade-a707e7567f90", "card"=>{"id"=>"ed7d123c-0593-553d-8ade-a707e7567f90", "name"=>"Sorin, Vengeful Bloodlord"}}
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+Processing by CardsController#create as */*
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:44 -0500
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  
+app/controllers/cards_controller.rb:14:in `create'
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (2.8ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Sorin, Vengeful Bloodlord"], ["multiverseid", "ed7d123c-0593-553d-8ade-a707e7567f90"]]
+  ↳ app/controllers/cards_controller.rb:14
+Started POST "/api/cards" for ::1 at 2019-06-16 12:34:45 -0500
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15241ms (Views: 0.4ms | ActiveRecord: 17.8ms)
+
+
+  Parameters: {"name"=>"Prison Realm", "id"=>"bc5ba5c4-0f98-5523-9af4-4342f7d26daf", "card"=>{"id"=>"bc5ba5c4-0f98-5523-9af4-4342f7d26daf", "name"=>"Prison Realm"}}
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15261ms (Views: 0.3ms | ActiveRecord: 19.4ms)
+
+
+Processing by CardsController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+  [1m[36mCard Create (15122.7ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+Started POST "/api/cards" for ::1 at 2019-06-16 12:35:00 -0500
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/cards" for ::1 at 2019-06-16 12:35:00 -0500
+  [1m[36mCard Create (2.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Prison Realm"], ["multiverseid", "bc5ba5c4-0f98-5523-9af4-4342f7d26daf"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Widespread Brutality", "id"=>"e9359a49-b258-5544-a172-40bcfde64165", "card"=>{"id"=>"e9359a49-b258-5544-a172-40bcfde64165", "name"=>"Widespread Brutality"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (15131.4ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Processing by CardsController#create as */*
+  [1m[36mCard Create (15128.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Widespread Brutality"], ["multiverseid", "e9359a49-b258-5544-a172-40bcfde64165"]]
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (2.0ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 30296ms (ActiveRecord: 15131.6ms)
+
+
+Completed 500 Internal Server Error in 45455ms (ActiveRecord: 15122.9ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 30323ms (Views: 0.4ms | ActiveRecord: 17.7ms)
+
+
+  
+  
+Completed 500 Internal Server Error in 15178ms (ActiveRecord: 15128.6ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 17.2ms)
+
+
+  
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+app/controllers/cards_controller.rb:14:in `create'
+app/controllers/cards_controller.rb:14:in `create'
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-16 12:35:30 -0500
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (2.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 12:37:59 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 12:37:59 -0500
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Vivien's Arkbow", "id"=>"8b437048-3c1a-5384-bd00-ab68eef3c4ff", "card"=>{"id"=>"8b437048-3c1a-5384-bd00-ab68eef3c4ff", "name"=>"Vivien's Arkbow"}}
+Processing by CardsController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+  [1m[36mCard Create (1.6ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Vivien's Arkbow"], ["multiverseid", "8b437048-3c1a-5384-bd00-ab68eef3c4ff"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 16.1ms)
+
+
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 12:38:07 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 12:38:07 -0500
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Domri, Anarch of Bolas", "id"=>"2d4e0cc6-9db9-512a-9cb3-ef0498256926", "card"=>{"id"=>"2d4e0cc6-9db9-512a-9cb3-ef0498256926", "name"=>"Domri, Anarch of Bolas"}}
+Processing by CardsController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.9ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Domri, Anarch of Bolas"], ["multiverseid", "2d4e0cc6-9db9-512a-9cb3-ef0498256926"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15125.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15149ms (Views: 0.5ms | ActiveRecord: 16.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15150ms (ActiveRecord: 15125.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-16 12:38:37 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 12:38:37 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Command the Dreadhorde", "id"=>"4f803b06-0ffc-5500-85c9-82bd124042b2", "card"=>{"id"=>"4f803b06-0ffc-5500-85c9-82bd124042b2", "name"=>"Command the Dreadhorde"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (15128.8ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Command the Dreadhorde"], ["multiverseid", "4f803b06-0ffc-5500-85c9-82bd124042b2"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15153ms (ActiveRecord: 15128.9ms)
+
+
+Completed 200 OK in 15153ms (Views: 0.4ms | ActiveRecord: 17.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started GET "/draft/%3Canonymous%3E" for 127.0.0.1 at 2019-06-16 12:39:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/draft/%3Canonymous%3E"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/draft/%3Canonymous%3E" for 127.0.0.1 at 2019-06-16 12:39:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/draft/%3Canonymous%3E"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-06-16 12:40:19 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 12:40:19 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Teferi, Time Raveler", "id"=>"7d8e9b39-11b3-5e45-a246-93b962f404b3", "card"=>{"id"=>"7d8e9b39-11b3-5e45-a246-93b962f404b3", "name"=>"Teferi, Time Raveler"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (15121.2ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Teferi, Time Raveler"], ["multiverseid", "7d8e9b39-11b3-5e45-a246-93b962f404b3"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15143ms (ActiveRecord: 15121.4ms)
+
+
+Completed 200 OK in 15145ms (Views: 0.3ms | ActiveRecord: 16.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started GET "/draft/%3Canonymous%3E" for 127.0.0.1 at 2019-06-16 12:41:07 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/draft/%3Canonymous%3E"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/draft/%3Canonymous%3E" for 127.0.0.1 at 2019-06-16 12:41:07 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/draft/%3Canonymous%3E"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-06-16 12:44:33 -0500
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Teferi, Time Raveler", "id"=>"cd15b31d-1c66-5421-a9cb-cecb83f08f53", "card"=>{"id"=>"cd15b31d-1c66-5421-a9cb-cecb83f08f53", "name"=>"Teferi, Time Raveler"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Teferi, Time Raveler"], ["multiverseid", "cd15b31d-1c66-5421-a9cb-cecb83f08f53"]]
+Started POST "/api/cards" for ::1 at 2019-06-16 12:44:33 -0500
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 11.2ms)
+
+
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/draft/%3Canonymous%3E" for 127.0.0.1 at 2019-06-16 12:44:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/draft/%3Canonymous%3E"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/draft/%3Canonymous%3E" for 127.0.0.1 at 2019-06-16 12:44:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/draft/%3Canonymous%3E"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-06-16 12:49:41 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 12:49:41 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Narset's Reversal", "id"=>"4de3df16-b375-5010-b45a-d680c5315c02", "card"=>{"id"=>"4de3df16-b375-5010-b45a-d680c5315c02", "name"=>"Narset's Reversal"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Narset's Reversal"], ["multiverseid", "4de3df16-b375-5010-b45a-d680c5315c02"]]
+  [1m[36mCard Create (15117.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15147ms (Views: 0.4ms | ActiveRecord: 17.3ms)
+
+
+Completed 500 Internal Server Error in 15145ms (ActiveRecord: 15117.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 12:49:59 -0500
+  
+AbstractController::ActionNotFound (The action 'delete_all' could not be found for CardsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-06-16 12:51:35 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 12:51:35 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Parameters: {"name"=>"Fblthp, the Lost", "id"=>"ae1310d3-d8e1-5a3b-962b-f7e0a79434fa", "card"=>{"id"=>"ae1310d3-d8e1-5a3b-962b-f7e0a79434fa", "name"=>"Fblthp, the Lost"}}
+Processing by CardsController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.9ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Fblthp, the Lost"], ["multiverseid", "ae1310d3-d8e1-5a3b-962b-f7e0a79434fa"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 8.9ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 12.5ms)
+
+
+Started DELETE "/api/cards/" for 127.0.0.1 at 2019-06-16 12:51:40 -0500
+  
+AbstractController::ActionNotFound (The action 'delete_all' could not be found for CardsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-06-16 12:52:09 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 12:52:09 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Tolsimir, Friend to Wolves", "id"=>"b045efcc-e64e-5916-b6fb-b42ba67df718", "card"=>{"id"=>"b045efcc-e64e-5916-b6fb-b42ba67df718", "name"=>"Tolsimir, Friend to Wolves"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Started POST "/api/cards" for ::1 at 2019-06-16 12:52:24 -0500
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCard Create (15129.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Tolsimir, Friend to Wolves"], ["multiverseid", "b045efcc-e64e-5916-b6fb-b42ba67df718"]]
+Started POST "/api/cards" for ::1 at 2019-06-16 12:52:24 -0500
+  ↳ app/controllers/cards_controller.rb:14
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15160ms (Views: 0.3ms | ActiveRecord: 15.5ms)
+
+
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15165ms (ActiveRecord: 15129.6ms)
+
+
+  [1m[36mCard Create (2.3ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+  
+  [1m[35m (22.0ms)[0m  [1m[36mcommit transaction[0m
+  Parameters: {"name"=>"Bioessence Hydra", "id"=>"ed0992ef-5fe5-5743-b38f-15219010942b", "card"=>{"id"=>"ed0992ef-5fe5-5743-b38f-15219010942b", "name"=>"Bioessence Hydra"}}
+app/controllers/cards_controller.rb:14:in `create'
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Completed 200 OK in 112ms (Views: 0.2ms | ActiveRecord: 24.4ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (2.5ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Bioessence Hydra"], ["multiverseid", "ed0992ef-5fe5-5743-b38f-15219010942b"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 94ms (Views: 0.2ms | ActiveRecord: 9.4ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 12:52:30 -0500
+  
+AbstractController::ActionNotFound (The action 'delete_all' could not be found for CardsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/cards/" for ::1 at 2019-06-16 13:06:09 -0500
+Processing by CardsController#index as HTML
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:5
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-06-16 13:06:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/cards/" for ::1 at 2019-06-16 13:06:48 -0500
+Processing by CardsController#index as HTML
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/cards/delete" for ::1 at 2019-06-16 13:06:54 -0500
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"delete"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:9
+Completed 404 Not Found in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Card with 'id'=delete):
+  
+app/controllers/cards_controller.rb:9:in `show'
+Started POST "/api/cards" for ::1 at 2019-06-16 13:13:57 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 13:13:57 -0500
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Ugin, the Ineffable", "id"=>"43ee2f67-2fde-50b2-9676-099bfa0333bc", "card"=>{"id"=>"43ee2f67-2fde-50b2-9676-099bfa0333bc", "name"=>"Ugin, the Ineffable"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Ugin, the Ineffable"], ["multiverseid", "43ee2f67-2fde-50b2-9676-099bfa0333bc"]]
+  ↳ app/controllers/cards_controller.rb:14
+Processing by CardsController#create as */*
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 14.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:14:03 -0500
+  
+AbstractController::ActionNotFound (The action 'delete_all' could not be found for CardsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-06-16 13:16:32 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 13:16:32 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"The Elderspell", "id"=>"71260df3-55b2-5f90-bc38-495d4056700c", "card"=>{"id"=>"71260df3-55b2-5f90-bc38-495d4056700c", "name"=>"The Elderspell"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15130.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "The Elderspell"], ["multiverseid", "71260df3-55b2-5f90-bc38-495d4056700c"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15163ms (Views: 0.3ms | ActiveRecord: 20.8ms)
+
+
+Completed 500 Internal Server Error in 15161ms (ActiveRecord: 15130.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-06-16 13:19:21 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 13:19:21 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Tolsimir, Friend to Wolves", "id"=>"b045efcc-e64e-5916-b6fb-b42ba67df718", "card"=>{"id"=>"b045efcc-e64e-5916-b6fb-b42ba67df718", "name"=>"Tolsimir, Friend to Wolves"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.6ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Tolsimir, Friend to Wolves"], ["multiverseid", "b045efcc-e64e-5916-b6fb-b42ba67df718"]]
+  [1m[36mCard Create (15117.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15145ms (Views: 0.5ms | ActiveRecord: 17.4ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15143ms (ActiveRecord: 15117.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:19:43 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `all' for #<CardsController:0x00007ffff1561af0>):
+  
+app/controllers/cards_controller.rb:22:in `delete_all'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:20:41 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms)
+
+
+  
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `clear' for #<Card::ActiveRecord_Relation:0x00007ffff2a2a540>):
+  
+app/controllers/cards_controller.rb:22:in `delete_all'
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:21:51 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (6.7ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 204 No Content in 8ms (ActiveRecord: 7.4ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 13:23:50 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 13:23:50 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Tamiyo, Collector of Tales", "id"=>"73f1982a-4f52-53bd-9696-6d0a5c027828", "card"=>{"id"=>"73f1982a-4f52-53bd-9696-6d0a5c027828", "name"=>"Tamiyo, Collector of Tales"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Tamiyo, Collector of Tales"], ["multiverseid", "73f1982a-4f52-53bd-9696-6d0a5c027828"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (23.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 25.2ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 6.4ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:24:30 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (11.1ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 204 No Content in 12ms (ActiveRecord: 11.1ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 13:26:30 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 13:26:30 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Krenko, Tin Street Kingpin", "id"=>"a0013c71-c3df-5556-bea9-c69f472bc2c7", "card"=>{"id"=>"a0013c71-c3df-5556-bea9-c69f472bc2c7", "name"=>"Krenko, Tin Street Kingpin"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Krenko, Tin Street Kingpin"], ["multiverseid", "a0013c71-c3df-5556-bea9-c69f472bc2c7"]]
+  [1m[36mCard Create (15126.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15152ms (ActiveRecord: 15126.3ms)
+
+
+Completed 200 OK in 15154ms (Views: 0.5ms | ActiveRecord: 19.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:27:10 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (7.0ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 13:27:36 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 13:27:36 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Ajani's Pridemate", "id"=>"aeb9f482-1c16-5564-815c-c84efdc307a4", "card"=>{"id"=>"aeb9f482-1c16-5564-815c-c84efdc307a4", "name"=>"Ajani's Pridemate"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15130.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (1.8ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Ajani's Pridemate"], ["multiverseid", "aeb9f482-1c16-5564-815c-c84efdc307a4"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15153ms (ActiveRecord: 15130.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+Completed 200 OK in 15155ms (Views: 0.4ms | ActiveRecord: 18.3ms)
+
+
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:27:53 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (7.8ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 13:34:23 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 13:34:23 -0500
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Domri, Anarch of Bolas", "id"=>"0e333d4e-c131-52e3-87ca-20f8ac8f0709", "card"=>{"id"=>"0e333d4e-c131-52e3-87ca-20f8ac8f0709", "name"=>"Domri, Anarch of Bolas"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Domri, Anarch of Bolas"], ["multiverseid", "0e333d4e-c131-52e3-87ca-20f8ac8f0709"]]
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 12.8ms)
+
+
+  [1m[36mCard Create (1.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 7.0ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:34:29 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+Ok
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at 'Ok'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-06-16 13:36:50 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 13:36:50 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Kaya, Bane of the Dead", "id"=>"c5eccd65-1794-56fc-89ba-d5ae1d1b9b61", "card"=>{"id"=>"c5eccd65-1794-56fc-89ba-d5ae1d1b9b61", "name"=>"Kaya, Bane of the Dead"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15130.1ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Kaya, Bane of the Dead"], ["multiverseid", "c5eccd65-1794-56fc-89ba-d5ae1d1b9b61"]]
+  [1m[35m (17.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15155ms (Views: 0.3ms | ActiveRecord: 19.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15157ms (ActiveRecord: 15130.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 13:37:28 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"ok"=>"ok", "card"=>{}}
+  [1m[36mCard Destroy (7.0ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 14:12:56 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 14:12:56 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Blast Zone", "id"=>"368f7fdc-06f7-5f75-b5aa-09d9a5f4caee", "card"=>{"id"=>"368f7fdc-06f7-5f75-b5aa-09d9a5f4caee", "name"=>"Blast Zone"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Blast Zone"], ["multiverseid", "368f7fdc-06f7-5f75-b5aa-09d9a5f4caee"]]
+  [1m[36mCard Create (15126.2ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (17.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 15154ms (Views: 0.5ms | ActiveRecord: 19.9ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15153ms (ActiveRecord: 15126.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:13:13 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (7.1ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 14:15:41 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 14:15:41 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Mobilized District", "id"=>"93d800cb-da41-5e80-8020-2e8a46ef7f90", "card"=>{"id"=>"93d800cb-da41-5e80-8020-2e8a46ef7f90", "name"=>"Mobilized District"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.6ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (17.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCard Create (15149.9ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Mobilized District"], ["multiverseid", "93d800cb-da41-5e80-8020-2e8a46ef7f90"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15157ms (Views: 0.4ms | ActiveRecord: 19.1ms)
+
+
+Completed 500 Internal Server Error in 15157ms (ActiveRecord: 15150.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:16:04 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (7.9ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 7.9ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:16:32 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (11.0ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 11.0ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:17:15 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (14.8ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 14:18:16 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 14:18:16 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Enter the God-Eternals", "id"=>"e972e7e4-f08d-5cd0-9a03-8fee84d3dd1d", "card"=>{"id"=>"e972e7e4-f08d-5cd0-9a03-8fee84d3dd1d", "name"=>"Enter the God-Eternals"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15122.9ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Enter the God-Eternals"], ["multiverseid", "e972e7e4-f08d-5cd0-9a03-8fee84d3dd1d"]]
+  [1m[35m (17.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 15147ms (Views: 0.4ms | ActiveRecord: 18.7ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15148ms (ActiveRecord: 15123.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:18:51 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (10.9ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 14:24:09 -0500
+Processing by CardsController#create as */*
+Started POST "/api/cards" for ::1 at 2019-06-16 14:24:09 -0500
+  Parameters: {"name"=>"Bond of Insight", "id"=>"b8b0a7e4-cc2d-5ba4-b3f6-4543b6dc3840", "card"=>{"id"=>"b8b0a7e4-cc2d-5ba4-b3f6-4543b6dc3840", "name"=>"Bond of Insight"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Bond of Insight"], ["multiverseid", "b8b0a7e4-cc2d-5ba4-b3f6-4543b6dc3840"]]
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+  Parameters: {"card"=>{}}
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 11.7ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.6ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 7.5ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:24:16 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (11.0ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 11.0ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:25:53 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (11.4ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 12.9ms)
+
+
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:26:10 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (8.7ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 204 No Content in 10ms (ActiveRecord: 9.4ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-06-16 14:26:48 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 14:26:48 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Karn's Bastion", "id"=>"a3246470-8441-5f05-a712-185cd67f1053", "card"=>{"id"=>"a3246470-8441-5f05-a712-185cd67f1053", "name"=>"Karn's Bastion"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.4ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Karn's Bastion"], ["multiverseid", "a3246470-8441-5f05-a712-185cd67f1053"]]
+  [1m[36mCard Create (15114.8ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 15134ms (ActiveRecord: 15115.0ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15140ms (Views: 0.4ms | ActiveRecord: 13.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:27:07 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (7.8ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 7.8ms)
+
+
+  
+NameError (undefined local variable or method `console' for #<CardsController:0x00007f2ae004d578>):
+  
+app/controllers/cards_controller.rb:23:in `delete_all'
+Started POST "/api/cards" for ::1 at 2019-06-16 14:28:06 -0500
+Started POST "/api/cards" for ::1 at 2019-06-16 14:28:06 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Enter the God-Eternals", "id"=>"e972e7e4-f08d-5cd0-9a03-8fee84d3dd1d", "card"=>{"id"=>"e972e7e4-f08d-5cd0-9a03-8fee84d3dd1d", "name"=>"Enter the God-Eternals"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.1ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (15125.1ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Enter the God-Eternals"], ["multiverseid", "e972e7e4-f08d-5cd0-9a03-8fee84d3dd1d"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (23.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15163ms (ActiveRecord: 15126.9ms)
+
+
+Completed 200 OK in 15156ms (Views: 0.4ms | ActiveRecord: 24.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-06-16 14:28:45 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (7.1ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 7.1ms)
+
+

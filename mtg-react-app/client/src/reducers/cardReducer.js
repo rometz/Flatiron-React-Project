@@ -11,12 +11,17 @@ function cardReducer(state = {
             return {...state, loading: false, cardData: action.payload}
 
         case "CREATE_CARD":
-            return {...state, cardData: [...state.cardData, action.payload]}
+            console.log(action)
+            if ( action.payload.status === 500) {
+                return state
+            } else {
+                return {...state, cardData: [...state.cardData, action.payload]}
+            }
+            
 
         case "DELETE_CARDS":
-            return {...state, loading: false, cardData: state.cardData.filter(
-                card => card.id !== action.payload.id
-            )}
+            console.log(action)
+            return {...state, loading: false, cardData: []}
 
         default:
             return state

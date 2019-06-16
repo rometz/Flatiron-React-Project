@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Deck from '../components/decks/Deck';
 import CardsContainer from './CardContainer';
+import { deleteCards } from '../actions/CardActions';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -11,7 +12,7 @@ class DeckContainer extends Component {
         console.log(cardProps)
         if ( cardProps !== undefined ) {
             return cardProps.map(
-                idvCard => <Deck key={idvCard.uniqueId} name={idvCard.name} />
+                idvCard => <Deck key={idvCard.multiverseid} name={idvCard.name} />
             )
         }
     };
@@ -28,7 +29,7 @@ class DeckContainer extends Component {
     }
 
     handleOnClick() {
-        this.props.deleteCards();
+        this.props.deleteCards(this.props.cardsObject);
         console.log(this.props.cardsObject)
     };
 
@@ -54,8 +55,5 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => ({
-    deleteCards: text => dispatch({type: "DELETE_CARDS", text})
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeckContainer);
+export default connect(mapStateToProps, { deleteCards })(DeckContainer);

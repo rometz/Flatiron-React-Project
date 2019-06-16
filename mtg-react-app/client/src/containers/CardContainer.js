@@ -19,6 +19,7 @@ class CardsContainer extends Component {
     };
 
     handleAddCard(e) {
+        console.log(e.target)
         const cardName = e.target.innerText;
         const id = e.target.attributes.cardid.value;       
         this.props.createCard(cardName, id);

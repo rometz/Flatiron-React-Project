@@ -4,7 +4,7 @@ const Deck = props => {
 
     return (
         <div className="mtg-card">
-            <p id="mtg-deck-card" key={props.key}>{props.name}</p>
+            <p id="mtg-deck-card" keyid={props.key}>{props.name}</p>
         </div>
     )
 }
