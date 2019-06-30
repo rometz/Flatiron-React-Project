@@ -1,17 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import About from './About';
-import AppRouter from '../../router/AppRouter';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import { Link } from "react-router-dom";
 
-const Header = 
-    <div class="header">
-            <Router>
-                <h4 class='header-item link'><Link to="/about">About</Link></h4>
-                <h4 class='header-item link'><Link to="/">Home</Link></h4>   
-
-                <Route path="/about" exact component={About} />
-                <Route path="/" exact component={AppRouter} />
-            </Router>
-    </div>
-
+const Header = props => { 
+    return(
+        <Navbar sticky="top">
+            <Nav>
+                <Link to="/">Home</Link>||
+                <Link to="/about">About</Link>||
+                <Link to="/deck/">Your Deck</Link>||
+                <Link to="/drafter/">Draft</Link>||
+            </Nav>
+        </Navbar>
+    )
+}
 export default Header;
