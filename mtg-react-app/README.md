@@ -4,9 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To make use of the app, clone the repository to your local environment.
 Then run:
-1. `bundle install`
-2. `rake db:migrate`
-3. `rake start`
+1. `cd mtg-react-app`
+2. `bundle install`
+3. `rake db:migrate`
+4. `npm install`
+5. `rake start`
 
 Then navigate to: `localhost:3000`
 
