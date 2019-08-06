@@ -7749,3 +7749,243 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/cards" for ::1 at 2019-07-02 18:30:10 -0500
+Started POST "/api/cards" for ::1 at 2019-07-02 18:30:10 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"name"=>"Teferi, Time Raveler", "id"=>"7d8e9b39-11b3-5e45-a246-93b962f404b3", "card"=>{"id"=>"7d8e9b39-11b3-5e45-a246-93b962f404b3", "name"=>"Teferi, Time Raveler"}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (2.6ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Started POST "/api/cards" for ::1 at 2019-07-02 18:30:25 -0500
+Started POST "/api/cards" for ::1 at 2019-07-02 18:30:25 -0500
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCard Create (15143.7ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Teferi, Time Raveler"], ["multiverseid", "7d8e9b39-11b3-5e45-a246-93b962f404b3"]]
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15178ms (Views: 0.5ms | ActiveRecord: 20.3ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Parameters: {"name"=>"Storrev, Devkarin Lich", "id"=>"48be2986-df4f-5d0d-969a-c056180fd531", "card"=>{"id"=>"48be2986-df4f-5d0d-969a-c056180fd531", "name"=>"Storrev, Devkarin Lich"}}
+  Parameters: {"card"=>{}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Completed 500 Internal Server Error in 15186ms (ActiveRecord: 15143.9ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  
+  [1m[36mCard Create (2.5ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Storrev, Devkarin Lich"], ["multiverseid", "48be2986-df4f-5d0d-969a-c056180fd531"]]
+  [1m[36mCard Create (15140.8ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/cards" for ::1 at 2019-07-02 18:30:40 -0500
+Started POST "/api/cards" for ::1 at 2019-07-02 18:30:40 -0500
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  [1m[35m (24.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 15180ms (ActiveRecord: 15140.9ms)
+
+
+Processing by CardsController#create as */*
+  
+  Parameters: {"name"=>"Teferi, Time Raveler", "id"=>"7d8e9b39-11b3-5e45-a246-93b962f404b3", "card"=>{"id"=>"7d8e9b39-11b3-5e45-a246-93b962f404b3", "name"=>"Teferi, Time Raveler"}}
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+Processing by CardsController#create as */*
+  ↳ app/controllers/cards_controller.rb:14
+  
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.7ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 8.6ms)
+
+
+app/controllers/cards_controller.rb:14:in `create'
+Completed 200 OK in 15192ms (Views: 0.6ms | ActiveRecord: 26.6ms)
+
+
+app/controllers/cards_controller.rb:14:in `create'
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (2.8ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Teferi, Time Raveler"], ["multiverseid", "7d8e9b39-11b3-5e45-a246-93b962f404b3"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 270ms (Views: 0.6ms | ActiveRecord: 19.7ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-07-02 18:30:59 -0500
+Started POST "/api/cards" for ::1 at 2019-07-02 18:30:59 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Casualties of War", "id"=>"6ce15528-e7c9-529e-b099-9b42490c25b9", "card"=>{"id"=>"6ce15528-e7c9-529e-b099-9b42490c25b9", "name"=>"Casualties of War"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.7ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Casualties of War"], ["multiverseid", "6ce15528-e7c9-529e-b099-9b42490c25b9"]]
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15145.3ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[35m (26.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15179ms (Views: 0.4ms | ActiveRecord: 28.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15180ms (ActiveRecord: 15145.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" DEFAULT VALUES):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-07-02 18:31:50 -0500
+Started POST "/api/cards" for ::1 at 2019-07-02 18:31:50 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"name"=>"Ajani, the Greathearted", "id"=>"66164eca-e6a5-5f7d-b47a-28ea086411ab", "card"=>{"id"=>"66164eca-e6a5-5f7d-b47a-28ea086411ab", "name"=>"Ajani, the Greathearted"}}
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  [1m[36mCard Create (15143.3ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Ajani, the Greathearted"], ["multiverseid", "66164eca-e6a5-5f7d-b47a-28ea086411ab"]]
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15168ms (ActiveRecord: 15143.5ms)
+
+
+  
+Completed 200 OK in 15167ms (Views: 0.4ms | ActiveRecord: 17.4ms)
+
+
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-07-02 18:33:51 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (10.7ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/api/cards" for ::1 at 2019-07-15 10:09:13 -0500
+Started POST "/api/cards" for ::1 at 2019-07-15 10:09:13 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/rolbuntu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"name"=>"Spark Double", "id"=>"731f562b-1efa-55cb-accf-33e4b2711bb3", "card"=>{"id"=>"731f562b-1efa-55cb-accf-33e4b2711bb3", "name"=>"Spark Double"}}
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCard Create (1.9ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (27.3ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/api/cards" for ::1 at 2019-07-15 10:09:28 -0500
+  [1m[36mCard Create (15188.5ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Spark Double"], ["multiverseid", "731f562b-1efa-55cb-accf-33e4b2711bb3"]]
+  ↳ app/controllers/cards_controller.rb:14
+Started POST "/api/cards" for ::1 at 2019-07-15 10:09:28 -0500
+  ↳ app/controllers/cards_controller.rb:14
+Processing by CardsController#create as */*
+Completed 200 OK in 15203ms (Views: 0.5ms | ActiveRecord: 30.7ms)
+
+
+  Parameters: {"name"=>"Feather, the Redeemed", "id"=>"abcf1e62-1744-5c16-961d-97c7d5db3744", "card"=>{"id"=>"abcf1e62-1744-5c16-961d-97c7d5db3744", "name"=>"Feather, the Redeemed"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Create (1.9ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Feather, the Redeemed"], ["multiverseid", "abcf1e62-1744-5c16-961d-97c7d5db3744"]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[35m (28.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCard Create (2.3ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+Completed 500 Internal Server Error in 15212ms (ActiveRecord: 15188.7ms)
+
+
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 30.4ms)
+
+
+  
+  ↳ app/controllers/cards_controller.rb:14
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  [1m[35m (23.6ms)[0m  [1m[36mcommit transaction[0m
+  
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 70ms (Views: 0.6ms | ActiveRecord: 26.1ms)
+
+
+app/controllers/cards_controller.rb:14:in `create'
+Started POST "/api/cards" for ::1 at 2019-07-15 10:09:37 -0500
+Started POST "/api/cards" for ::1 at 2019-07-15 10:09:37 -0500
+Processing by CardsController#create as */*
+Processing by CardsController#create as */*
+  Parameters: {"card"=>{}}
+  Parameters: {"name"=>"Ugin, the Ineffable", "id"=>"d625b4fc-143a-5ec2-b428-96164ada11f8", "card"=>{"id"=>"d625b4fc-143a-5ec2-b428-96164ada11f8", "name"=>"Ugin, the Ineffable"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (1.7ms)[0m  [1m[32mINSERT INTO "cards" DEFAULT VALUES[0m
+  ↳ app/controllers/cards_controller.rb:14
+  [1m[36mCard Create (15154.5ms)[0m  [1m[32mINSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)[0m  [["name", "Ugin, the Ineffable"], ["multiverseid", "d625b4fc-143a-5ec2-b428-96164ada11f8"]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+  ↳ app/controllers/cards_controller.rb:14
+Completed 200 OK in 15177ms (Views: 0.2ms | ActiveRecord: 17.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/cards_controller.rb:14
+Completed 500 Internal Server Error in 15178ms (ActiveRecord: 15154.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "cards" ("name", "multiverseid") VALUES (?, ?)):
+  
+app/controllers/cards_controller.rb:14:in `create'
+Started DELETE "/api/cards/" for ::1 at 2019-07-15 10:33:35 -0500
+Processing by CardsController#delete_all as */*
+  Parameters: {"card"=>{}}
+  [1m[36mCard Destroy (14.3ms)[0m  [1m[31mDELETE FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:22
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 14.3ms)
+
+
