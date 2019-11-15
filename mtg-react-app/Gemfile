@@ -23,7 +23,7 @@ gem 'puma', '~> 3.11'
 # gem 'capistrano-rails', group: :development
 
 # Use rack-cors for middleware between cross-origin api fetching
-gem 'rack-cors', '~> 1.0', '>= 1.0.3'
+gem 'rack-cors', '~> 1.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
